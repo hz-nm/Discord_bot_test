@@ -1,0 +1,88 @@
+This should server as a guide to the bot created and the functions it can perform.
+
+The Following python packages are to be installed (via pip or some other way)
+- Discord.py
+- loadenv
+
+Things you can change,
+- Two files are being given to you,
+    1. bot_dm.py
+    2. .env
+
+The bot_dm.py is the python file for the bot in which Following parameters can be changed as per
+preferences,
+1 - MESSAGE -> This is the message that will be dm'ed to all members of the server the bot is part of.
+    FORMAT: (str), Just write the message within the inverted commas.
+2 - time_to_kick -> This is the number of days after which 
+    FORMAT: (int), A number is to be input over here.
+
+The .env file contains important information regarding server and tokens which should not be shared
+with unknown people. This ofcourse can also be edited to meet preferences.
+1 - DISCORD_TOKEN -> This is the token provided by Discord so we can connect our bot to Discord's API
+                    and shouldn't be changed unless absolutely necessary.
+2 - DISCORD_GUILD -> This the name of Server whose member you would like to send your messages to. Keep in
+                    mind that your bot needs to be a member of the server itself.
+                    Change to match the exact name of the server (CASE SENSITIVE)
+
+Following is a list of functions that the bot can do along with instructions on how to
+invoke them or if they are automatically invoked.
+
+1 - Send message to new member when he joins
+Invocation Method: Automatically invoked
+This command automatically sends message to any member who joins.
+The message can obviously be tailored to meet requirements.
+Just put the new message between the inverted commas and you are good to go.
+
+2 - Test Command
+Invocation Method: Write "!test" on a channel in a server (without the inverted commas)
+Invocation Restrictions: None
+Use this command to test out your bot. When invoked, it will reply to you with a message 'Bot Testing 1'.
+This message can also be changed and further messages can be added as well which will then be chosen randomly.
+For example, funny quotes or facts can be added to messages list separated by a ',' and the bot
+will randomly choose a message and display it.
+
+3 - Mass Messaging command
+Invocation Method: Wrtie "!dmm" on a channel in a server (without the inverted commas)
+Invocation Restrictions: Will only be invoked if the Admin of the channel writes the command.
+Use this command for mass messaging/dm'ing all of the members in your server with a custom message.
+The custom message can be set according to needs in the VARIABLE named 'MESSAGE' as discussed above.
+
+4 - Link Removal Command
+Invocation Method: Automatically invoked
+Invocation Restrictions: Will only remove links that have not been posted by 'ogminter'
+This command is automatically invoked whenever a member that is not an admin tries to post a link
+to a channel. This is a bonus command that will add good moderation to any server.
+
+5 - Kick Command
+Invocation Method: Wrtie "!status" on a channel in a server (without the inverted commas)
+Invocation Restrictions: Can only be invoked by an Admin.
+Update -- Version 2:
+Invocation has been programmed to be automated and the script now checks the status of members every 12 hours.
+
+Use this command to kick out members that have been inactive for an amount of days that has been set.
+The days can be set in the VARIABLE named, time_to_kick (currently at 60 days)
+
+Creates two new CSV files which contain information regarding offline and online statuses of every member.
+last_online.csv
+latest_online.csv
+
+Running the BOT:
+################
+The bot can be run on any computer having a valid installation of Python (version >= 3.7.7)
+Just save the file in a folder and go into that folder using a command prompt and type,
+    > python bot_final.py
+Keep in mind that ".env" file should reside in the same folder as the Python Script.
+Also to keep the bot online you will have to keep the computer turned on all the time as well.
+
+The bot can also be hosted online which will keep the bot running indefinitely.
+There are various services that provide Free and Paid options to host the bot.
+Please choose accordingly.
+
+Points to Remember:
+###################
+- To send messages to members of a GUILD/SERVER, the bot needs to be added to the server by an Admin or
+a moderator of said server.
+- Best way to get members onto a server is via good marketing practices usually involving an influencer.
+- Test out the kick command when the you have more than enough members as has been seen a lot of the
+members stay offliine for longer periods of time but jump right back in when important dates arrive.
+In such a case, you wouldn't want to loose valuable clients just because they were a bit lazy.
